@@ -10,32 +10,48 @@
   <div class="bg-white shadow-lg rounded-lg p-6 w-full max-w-lg">
     <h1 class="text-2xl font-bold text-center mb-6">Physics Graph Box Calculator</h1>
 
+    <!-- Y-Axis Calculation Section -->
     <div class="mb-6">
-      <h2 class="text-lg font-semibold mb-3">Y-Axis</h2>
+      <h2 class="text-lg font-semibold mb-3">Y-Axis Setup</h2>
       <div class="grid grid-cols-1 gap-3">
         <input type="number" id="yHighest" placeholder="Highest Value on Y-axis" class="border p-2 rounded w-full">
         <input type="number" id="yLowest" placeholder="Lowest Value on Y-axis (Origin)" class="border p-2 rounded w-full">
         <input type="number" id="yBoxes" placeholder="Number of Boxes on Y-axis" class="border p-2 rounded w-full">
-        <button onclick="calculateY()" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Calculate Y-Axis</button>
-        <p id="yResult" class="font-medium"></p>
+        <button onclick="calculateY()" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Calculate Y-Axis Scale</button>
+        <p id="yResult" class="font-medium text-center mt-2"></p>
       </div>
     </div>
 
     <hr class="my-4">
 
+    <!-- X-Axis Calculation Section -->
     <div class="mb-6">
-      <h2 class="text-lg font-semibold mb-3">X-Axis</h2>
+      <h2 class="text-lg font-semibold mb-3">X-Axis Setup</h2>
       <div class="grid grid-cols-1 gap-3">
         <input type="number" id="xHighest" placeholder="Highest Value on X-axis" class="border p-2 rounded w-full">
         <input type="number" id="xLowest" placeholder="Lowest Value on X-axis (Origin)" class="border p-2 rounded w-full">
         <input type="number" id="xBoxes" placeholder="Number of Boxes on X-axis" class="border p-2 rounded w-full">
-        <button onclick="calculateX()" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Calculate X-Axis</button>
-        <p id="xResult" class="font-medium"></p>
+        <button onclick="calculateX()" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Calculate X-Axis Scale</button>
+        <p id="xResult" class="font-medium text-center mt-2"></p>
       </div>
     </div>
 
     <hr class="my-6 border-t-2 border-gray-200">
 
+    <!-- Box to Coordinate Converter -->
+    <div class="mb-6">
+        <h2 class="text-lg font-semibold mb-3">Box to Coordinate Converter</h2>
+        <div class="grid grid-cols-2 gap-4 mb-3">
+            <input type="number" id="xBoxesInput" placeholder="Boxes from X-Origin" class="border p-2 rounded w-full">
+            <input type="number" id="yBoxesInput" placeholder="Boxes from Y-Origin" class="border p-2 rounded w-full">
+        </div>
+        <button onclick="calculateCoordinatesFromBoxes()" class="bg-purple-500 text-white px-4 py-2 rounded hover:bg-purple-600 w-full">Calculate Coordinates from Boxes</button>
+        <p id="coordResult" class="font-medium mt-2 text-center"></p>
+    </div>
+
+    <hr class="my-6 border-t-2 border-gray-200">
+
+    <!-- Coordinate to Box Locator & Table -->
     <div>
         <h2 class="text-lg font-semibold mb-3">Coordinate Point Locator</h2>
         <div class="grid grid-cols-2 gap-4 mb-4">
@@ -57,12 +73,13 @@
                     </tr>
                 </thead>
                 <tbody id="coordTableBody" class="text-center">
-                    </tbody>
+                </tbody>
             </table>
         </div>
     </div>
   </div>
 
+  <!-- Link to the external JavaScript file -->
   <script src="script.js"></script>
 </body>
 </html>
