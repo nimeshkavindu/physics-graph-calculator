@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Physics Graph Box Calculator</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center py-12">
+  <div class="bg-white shadow-lg rounded-lg p-6 w-full max-w-lg">
+    <h1 class="text-2xl font-bold text-center mb-6">Physics Graph Box Calculator</h1>
+
+    <div class="mb-6">
+      <h2 class="text-lg font-semibold mb-3">Y-Axis</h2>
+      <div class="grid grid-cols-1 gap-3">
+        <input type="number" id="yHighest" placeholder="Highest Value on Y-axis" class="border p-2 rounded w-full">
+        <input type="number" id="yLowest" placeholder="Lowest Value on Y-axis (Origin)" class="border p-2 rounded w-full">
+        <input type="number" id="yBoxes" placeholder="Number of Boxes on Y-axis" class="border p-2 rounded w-full">
+        <button onclick="calculateY()" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Calculate Y-Axis</button>
+        <p id="yResult" class="font-medium"></p>
+      </div>
+    </div>
+
+    <hr class="my-4">
+
+    <div class="mb-6">
+      <h2 class="text-lg font-semibold mb-3">X-Axis</h2>
+      <div class="grid grid-cols-1 gap-3">
+        <input type="number" id="xHighest" placeholder="Highest Value on X-axis" class="border p-2 rounded w-full">
+        <input type="number" id="xLowest" placeholder="Lowest Value on X-axis (Origin)" class="border p-2 rounded w-full">
+        <input type="number" id="xBoxes" placeholder="Number of Boxes on X-axis" class="border p-2 rounded w-full">
+        <button onclick="calculateX()" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Calculate X-Axis</button>
+        <p id="xResult" class="font-medium"></p>
+      </div>
+    </div>
+
+    <hr class="my-6 border-t-2 border-gray-200">
+
+    <div>
+        <h2 class="text-lg font-semibold mb-3">Coordinate Point Locator</h2>
+        <div class="grid grid-cols-2 gap-4 mb-4">
+            <input type="number" id="newXCoord" placeholder="X Coordinate" class="border p-2 rounded w-full">
+            <input type="number" id="newYCoord" placeholder="Y Coordinate" class="border p-2 rounded w-full">
+        </div>
+        <button onclick="addPoint()" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 w-full mb-2">Add Point to Table</button>
+        <button onclick="clearTable()" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 w-full">Clear Table</button>
+        <p id="pointError" class="text-red-500 font-medium mt-2 text-center"></p>
+
+        <div class="mt-6 overflow-x-auto">
+            <table class="min-w-full bg-white border">
+                <thead class="bg-gray-200">
+                    <tr>
+                        <th class="py-2 px-4 border-b">X Coordinate</th>
+                        <th class="py-2 px-4 border-b">Y Coordinate</th>
+                        <th class="py-2 px-4 border-b">Boxes from X-Origin</th>
+                        <th class="py-2 px-4 border-b">Boxes from Y-Origin</th>
+                    </tr>
+                </thead>
+                <tbody id="coordTableBody" class="text-center">
+                    </tbody>
+            </table>
+        </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
